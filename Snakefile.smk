@@ -5,6 +5,7 @@ genome_dir = config['genome_dir']
 species_dict = config['species']
 outdir = config.get('outdir','results')
 happy_hmms = config['happy_hmms']
+max_threads = config.get('max_threads',36)
 
 #rules
 rule all:
@@ -17,12 +18,12 @@ rule happy_abcenth:
         gtf = outdir + '/HAPpy-ABCENTH/{species}/ABCENTH.gtf',
         pep = outdir + '/HAPpy-ABCENTH/{species}/ABCENTH.pep',
     conda: 'envs/abcenth.yml'
-    threads: 36
+    threads: max_threads
     params:
         target = lambda w: species_dict[w.species],
     shell:
         """
-        python ~/tools/HAPpy-ABCENTH/HAP.py \
+       HAPpy \
             --genome {params.target} 
             --hmm_dir {happy_hmms} \
             --threads {threads} \
