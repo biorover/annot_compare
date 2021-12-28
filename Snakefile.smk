@@ -60,5 +60,5 @@ rule exonerate:
             -c {threads} \
             --maxintron 3600 \
             --showtargetgff T \
-            {params.query} {params.target} > {output}}
+            {params.query} {params.target} > {output}
         """
