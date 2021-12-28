@@ -1,0 +1,17 @@
+channels:
+- bioconda
+- conda-forge
+- anaconda
+- etetoolkit
+dependencies:
+- python=3
+- numpy
+- ete3
+- wise2
+- mafft=7
+- hmmer=3
+- intervaltree
+- pip
+- pip:
+    - MAGOT2
+    - HAPpy-ABCENTH
