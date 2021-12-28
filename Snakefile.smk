@@ -20,7 +20,7 @@ rule happy_abcenth:
     conda: 'envs/abcenth.yml'
     threads: max_threads
     params:
-        target = lambda w: species_dict[w.species],
+        target = lambda w: genome_dir + '/' + species_dict[w.species],
     shell:
         """
        HAPpy \
