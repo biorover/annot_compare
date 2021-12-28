@@ -24,7 +24,7 @@ rule happy_abcenth:
     shell:
         """
        HAPpy \
-            --genome {params.target} 
+            --genome {params.target} \
             --hmm_dir {happy_hmms} \
             --threads {threads} \
             --annotator ABCENTH \
