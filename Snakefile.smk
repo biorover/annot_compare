@@ -1,6 +1,6 @@
 import os,sys
 
-config: 'config.yml'
+configfile: 'config.yml'
 genome_dir = config['genome_dir']
 species_dict = config['species']
 outdir = config.get('outdir','results')
