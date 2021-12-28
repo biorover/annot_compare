@@ -11,7 +11,7 @@ exonerate_queries = config['exonerate_queries']
 #rules
 rule all:
     input:
-        expand(outdir + '/HAPpy-ABCENTH/{species}/ABCENTH.gtf',species = species_dict.keys() )
+        expand(outdir + '/HAPpy-ABCENTH/{species}/ABCENTH.gtf',species = species_dict.keys() ),
         expand(outdir + '/exonerate/{species}/exonerate.txt',species = species_dict.keys() )
 
 rule happy_abcenth:
