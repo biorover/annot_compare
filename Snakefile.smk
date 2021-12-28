@@ -32,5 +32,5 @@ rule happy_abcenth:
             --overwrite True \
             --ABCENTH_options '--orf_finder_E 0.01 --full_pseudoexon_search True'
         
-        MAGOT gff2fasta {output.gtf} {params.target} --seq_type aa | sed -e 's/>/>{wildcards.species}_/' > {output.pep}
+        MAGOT gff2fasta {output.gtf} {params.target} --seq-type lorfaa | sed -e 's/>/>{wildcards.species}_/' > {output.pep}
         """
