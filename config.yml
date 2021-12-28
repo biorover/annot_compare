@@ -12,3 +12,7 @@ species:
     Sinv: Solenopsis_invicta_GCF_000188075.2_Si_gnH_genomic.fa
 genome_dir: '/work/FAC/FBM/DEE/lkeller/default/smckenzi/ABCENTHpub/test_genomes'
 happy_hmms: '/work/FAC/FBM/DEE/lkeller/default/smckenzi/ABCENTHpub/refs/HsalObirCflo_cutoff0.45'
+exonerate_queries:
+    Cflo: /work/FAC/FBM/DEE/lkeller/default/smckenzi/ABCENTHpub/refs/CfloABCENTHfixed.complete.pep
+    Obir: /work/FAC/FBM/DEE/lkeller/default/smckenzi/ABCENTHpub/refs/CompleteObirORs.pep
+    Hsal: /work/FAC/FBM/DEE/lkeller/default/smckenzi/ABCENTHpub/refs/HsalABCENTHfixed.complete.pep
