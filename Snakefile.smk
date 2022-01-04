@@ -49,7 +49,7 @@ rule cat_exonerate:
 rule exonerate:
     output:
         outfile = '{outdir}/exonerate/{species}/{qsp}.exonerate.txt'
-    threads: min((12,max_threads))
+    threads: 1 #min((12,max_threads))
     params: 
         query = lambda w: exonerate_queries[w.qsp],
         target = lambda w: genome_dir + '/' + species_dict[w.species],
