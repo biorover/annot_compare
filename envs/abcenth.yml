@@ -13,5 +13,5 @@ dependencies:
 - intervaltree
 - pip
 - pip:
-    - MAGOT2==2.0.1
-    - HAPpy-ABCENTH
+    - git+https://github.com/biorover/MAGOT2.git
+    - git+https://github.com/biorover/HAPpy-ABCENTH.git

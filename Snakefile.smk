@@ -11,13 +11,29 @@ exonerate_queries = config['exonerate_queries']
 #rules
 rule all:
     input:
-        expand(outdir + '/HAPpy-ABCENTH/{species}/ABCENTH.gtf',species = species_dict.keys() ),
+        expand(outdir + '/HAPpy-ABCENTH/{species}/ABCENTH.pep',species = species_dict.keys() ),
         expand(outdir + '/exonerate/{species}/exonerate.txt',species = species_dict.keys() )
+
+rule translate_abcenth:
+    input:
+        '{outdir}/HAPpy-ABCENTH/{species}/ABCENTH.gtf',
+    output:
+        '{outdir}/HAPpy-ABCENTH/{species}/ABCENTH.pep'
+    conda: 'envs/abcenth.yml'
+    threads: 1
+    params:
+        target = lambda w: genome_dir + '/' + species_dict[w.species],
+    shell:
+        """
+        MAGOT gff2fasta {input} {params.target} --seq-type lorfaa | sed -e 's/>/>{wildcards.species}_/' > {output}
+        """
+
+
 
 rule happy_abcenth:
     output:
         gtf = '{outdir}/HAPpy-ABCENTH/{species}/ABCENTH.gtf',
-        pep = '{outdir}/HAPpy-ABCENTH/{species}/ABCENTH.pep',
+        #pep = '{outdir}/HAPpy-ABCENTH/{species}/ABCENTH.pep',
     conda: 'envs/abcenth.yml'
     threads: max_threads
     params:
@@ -32,8 +48,6 @@ rule happy_abcenth:
             --output_dir $(dirname {output.gtf}) \
             --overwrite True \
             --ABCENTH_options '--orf_finder_E 0.01 --full_pseudoexon_search True'
-        
-        MAGOT gff2fasta {output.gtf} {params.target} --seq-type lorfaa | sed -e 's/>/>{wildcards.species}_/' > {output.pep}
         """
 
 rule cat_exonerate:
