@@ -1,9 +1,9 @@
 species:
     Achar: Acromyrmex_charruanus_GCA_017607545.1_ASM1760754v1_genomic.fna
     Aech: Acromyrmex_echinatior_GCF_000204515.1_Aech_3.9_genomic.fa
-    Ahey: Acromyrmex_heyeri_GCA_017607565.1_ASM1760756v1_genomic.fna
+    Ahey: Acromyrmex_heyeri.v2.1.fa
     Acep: Atta_cephalotes_GCF_000143395.1_Attacep1.0_genomic.fa
-    Acol: Atta_columbica_GCA_001594045.1_Acol1.0_genomic.fna
+    Acol: Atta_columbica_GCF_001594045.1_Acol1.0_genomic.fna
     Cobs: Cardiocondyla_obscurior_Cobs_1.4_genome.fa.fa
     Mpha: Monomorium_pharaonis_GCA_000980195.1_M.pharaonis_V1_genomic.fna
     Pbar: Pogonomyrmex_barbatus_GCF_000187915.1_Pbar_UMD_V03_genomic.fa
